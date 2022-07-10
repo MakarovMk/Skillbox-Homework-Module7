@@ -7,7 +7,7 @@ namespace Employees
         static void Main(string[] args)
         {
             #region ДЗ
-            
+
             ///  
             /// Улучшите программу, которую разработали в модуле 6. Создайте структуру «Сотрудник» со следующими полями:
             /// - ID                                +
@@ -28,11 +28,12 @@ namespace Employees
             /// 
             #endregion
 
-            string path = "savedata.txt";//"data.txt";               // Путь к файлу с данными для загрузки
-            string savepath = "savedata.txt";       // Путь к файлу для сохранения данных
-            string addfile = "adddata.txt";         // Путь к файлу с доп данными для добавления в таблицу
-            string importfile = "importfile.txt";   // Путь к файлу с данными для импорта
-            int line;                               // Переменная номера строки/поля
+            string path3333;
+            string path = "savedata.txt";//"data.txt";                   // Путь к файлу с данными для загрузки
+            string savepath = "savedata.txt";                           // Путь к файлу для сохранения данных
+            string addfile = "adddata.txt";                              // Путь к файлу с доп данными для добавления в таблицу
+            string importfile = "importfile.txt";                       // Путь к файлу с данными для импорта
+            int line;                                                   // Переменная номера строки/поля
             DateTime bday, date1, date2;
             string id, age, height, name, city, bdaystr, date1str, date2str;
 
