@@ -28,7 +28,6 @@ namespace Employees
             /// 
             #endregion
 
-            string path3333;
             string path = "savedata.txt";//"data.txt";                   // Путь к файлу с данными для загрузки
             string savepath = "savedata.txt";                           // Путь к файлу для сохранения данных
             string addfile = "adddata.txt";                              // Путь к файлу с доп данными для добавления в таблицу
