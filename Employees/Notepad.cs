@@ -17,7 +17,7 @@ namespace Employees
         /// </summary>
         public Notepad(params Content[] Args)
         {
-            content = Args.ToList();
+            content = new List<Content>();
             titles = new string[]                   // Инициализация заголовков столбцов
             {"ID", "Дата создания записи", "ФИО сотрудника", "Возраст", "Рост", "Дата рождения", "Место рождения"};
         }
@@ -43,7 +43,7 @@ namespace Employees
             {
                 while (!read.EndOfStream)
                 {
-                    string[] arg = read.ReadLine().Split(',');
+                    string[] arg = read.ReadLine().Split('#');
                     AddLine(new Content(Convert.ToInt32(arg[0]), Convert.ToDateTime(arg[1]), arg[2], Convert.ToInt32(arg[3]), Convert.ToInt32(arg[4]), Convert.ToDateTime(arg[5]), arg[6]));
 
                     //Console.WriteLine($"{Convert.ToInt32(arg[0])}, {Convert.ToDateTime(arg[1])}, {arg[2]}, {Convert.ToInt32(arg[3])}, {Convert.ToInt32(arg[4])}, {Convert.ToDateTime(arg[5])}, {arg[6]}");
@@ -69,7 +69,7 @@ namespace Employees
         /// </summary>
         public void PrintDB()
         {
-            Console.WriteLine($"{titles[0],10} {titles[1],10} {titles[2],10} {titles[3],15} {titles[4],15} {titles[5],15} {titles[6],20}\n");
+            Console.WriteLine($"{titles[0],10} {titles[1],20} {titles[2],30} {titles[3],10} {titles[4],8} {titles[5],20} {titles[6],18}\n");
             for (int i = 0; i < content.Count; i++)
             {
                 Console.WriteLine(content[i].Print());
@@ -98,8 +98,9 @@ namespace Employees
 
             for (int i = 0; i < content.Count; i++)                                                                                             // Сохранение записей с информацией
             {
-                string line = String.Format($"{content[i].ID},{content[i].DateOfCreation},{content[i].EmployeeName},{content[i].EmployeeAge},{content[i].EmployeeHeight}, {content[i].EmployeeBDay}, {content[i].EmployeeCity}");
+                string line = String.Format($"{content[i].ID}#{content[i].DateOfCreation}#{content[i].EmployeeName}#{content[i].EmployeeAge}#{content[i].EmployeeHeight}#{content[i].EmployeeBDay}#{content[i].EmployeeCity}");
                 File.AppendAllText(savepath, $"{line}\n", Encoding.UTF8);
+                //File.AppendAllText(savepath, line.Split(, Encoding.UTF8);
             }
         }
 
@@ -113,7 +114,7 @@ namespace Employees
             {
                 while (!read.EndOfStream)
                 {
-                    string[] arg = read.ReadLine().Split(',');
+                    string[] arg = read.ReadLine().Split('#');
                     //AddLine(new Content(arg[0], arg[1], arg[2], arg[3], Convert.ToDateTime(arg[4]), arg[5]));
                     AddLine(new Content (Int32.Parse(arg[0]), arg[1], Int32.Parse(arg[2]), Int32.Parse(arg[3]), Convert.ToDateTime(arg[4]), arg[5]));
                 }

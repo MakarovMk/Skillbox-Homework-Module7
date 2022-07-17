@@ -115,7 +115,7 @@ namespace Employees
         /// <returns></returns>
         public string Print()
         {
-            return $"{iD,10} {DateOfCreation,10} {EmployeeName,10} {EmployeeAge,15} {EmployeeHeight,15} {EmployeeBDay,15} {EmployeeCity,20}";
+            return $"{iD,10} {DateOfCreation,20} {EmployeeName,30} {EmployeeAge,10} {EmployeeHeight,8} {EmployeeBDay,20} {EmployeeCity,18}";
         }
     }
 }

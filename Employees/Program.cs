@@ -28,7 +28,7 @@ namespace Employees
             /// 
             #endregion
 
-            string path = "savedata.txt";//"data.txt";                   // Путь к файлу с данными для загрузки
+            //string path = "savedata.txt";//"data.txt";                   // Путь к файлу с данными для загрузки
             string savepath = "savedata.txt";                           // Путь к файлу для сохранения данных
             string addfile = "adddata.txt";                              // Путь к файлу с доп данными для добавления в таблицу
             string importfile = "importfile.txt";                       // Путь к файлу с данными для импорта
@@ -56,7 +56,7 @@ namespace Employees
                 switch (key)
                 {
                     case 1:
-                        notepad.Load(path);
+                        notepad.Load(savepath);
                         Console.Clear();
                         Console.WriteLine("Файл загружен\n\n");
                         notepad.PrintDB();
@@ -93,7 +93,6 @@ namespace Employees
                         height = Console.ReadLine();
 
                         Console.WriteLine("Введите дату рождения сотрудника: ");
-                        //string bay = Console.ReadLine();
                         ConsoleDatePickerMini cdp = new ConsoleDatePickerMini();
                         cdp.Show();
                         bday = cdp.GetDate();
