@@ -28,12 +28,10 @@ namespace Employees
             /// 
             #endregion
 
-            //string path = "savedata.txt";//"data.txt";                   // Путь к файлу с данными для загрузки
-            string savepath = "savedata.txt";                           // Путь к файлу для сохранения данных
-            string addfile = "adddata.txt";                              // Путь к файлу с доп данными для добавления в таблицу
-            string importfile = "importfile.txt";                       // Путь к файлу с данными для импорта
-            int line;                                                   // Переменная номера строки/поля
-            DateTime bday, date1, date2;
+            string savepath = "savedata.txt";       // Путь к файлу для сохранения данных
+            string addfile = "adddata.txt";         // Путь к файлу с доп данными для добавления в таблицу
+            string importfile = "importfile.txt";   // Путь к файлу с данными для импорта
+            int line;                               // Переменная номера строки/поля
             string id, age, height, name, city, bdaystr, date1str, date2str;
 
             Notepad notepad = new Notepad(new Content());
@@ -93,11 +91,7 @@ namespace Employees
                         height = Console.ReadLine();
 
                         Console.WriteLine("Введите дату рождения сотрудника: ");
-                        ConsoleDatePickerMini cdp = new ConsoleDatePickerMini();
-                        cdp.Show();
-                        bday = cdp.GetDate();
-                        Console.WriteLine("Вы выбрали {0:d}", bday);
-                        bdaystr = Convert.ToString(bday);
+                        bdaystr = Console.ReadLine();
 
                         Console.WriteLine("Введите место рождения сотрудника: ");
                         city = Console.ReadLine();
@@ -131,20 +125,10 @@ namespace Employees
 
                     case 7:
                         Console.WriteLine("Введите начальную дату для импорта(формат dd-mm-yy):");
-
-                        ConsoleDatePickerMini cdp1 = new ConsoleDatePickerMini();
-                        cdp1.Show();
-                        date1 = cdp1.GetDate();
-                        Console.WriteLine("Вы выбрали {0:d}", date1);
-                        date1str = Convert.ToString(date1);
+                        date1str = Console.ReadLine();
 
                         Console.WriteLine("Введите конечную дату для импорта(формат dd-mm-yy):");
-
-                        ConsoleDatePickerMini cdp2 = new ConsoleDatePickerMini();
-                        cdp2.Show();
-                        date2 = cdp2.GetDate();
-                        Console.WriteLine("Вы выбрали {0:d}", date2);
-                        date2str = Convert.ToString(date1);
+                        date2str = Console.ReadLine();
 
                         notepad.Import(date1str, date2str, importfile);
                         Console.Clear();
@@ -154,7 +138,7 @@ namespace Employees
                         break;
 
                     case 8:
-                        Console.WriteLine("Выберите номер поля, по которому делать сортировку (1-5)");
+                        Console.WriteLine("Выберите номер поля, по которому делать сортировку (1-8)");
                         line = int.Parse(Console.ReadLine());
                         notepad.Sort(line);
                         Console.Clear();

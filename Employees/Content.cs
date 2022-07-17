@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Employees
 {
@@ -115,7 +111,7 @@ namespace Employees
         /// <returns></returns>
         public string Print()
         {
-            return $"{iD,10} {DateOfCreation,20} {EmployeeName,30} {EmployeeAge,10} {EmployeeHeight,8} {EmployeeBDay,20} {EmployeeCity,18}";
+            return $"{iD,10} {DateOfCreation,20} {EmployeeName,23} {EmployeeAge,10} {EmployeeHeight,8} {EmployeeBDay,20} {EmployeeCity,18}";
         }
     }
 }
